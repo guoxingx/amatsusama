@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>768</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>光束质量检测 v0.0.1</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>768</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFiles_F">
+    <property name="title">
+     <string>Files(&amp;F)</string>
+    </property>
+    <addaction name="actionOpen_O"/>
+   </widget>
+   <widget class="QMenu" name="menuProcess_P">
+    <property name="title">
+     <string>Process(&amp;P)</string>
+    </property>
+    <addaction name="actionMeasure_Result"/>
+    <addaction name="actionSetting"/>
+    <addaction name="separator"/>
+    <addaction name="action3D"/>
+    <addaction name="actionM2"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionVersion"/>
+   </widget>
+   <addaction name="menuFiles_F"/>
+   <addaction name="menuProcess_P"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen_O"/>
+   <addaction name="separator"/>
+   <addaction name="actionMeasure_Result"/>
+   <addaction name="actionSetting"/>
+   <addaction name="separator"/>
+   <addaction name="action3D"/>
+   <addaction name="actionM2"/>
+  </widget>
+  <widget class="QDockWidget" name="measureDock">
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="measureDwContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QTableWidget" name="tableWidget">
+       <row>
+        <property name="text">
+         <string>饱和数</string>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>最大值</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>最小值</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>质心</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>峰值比</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>刀口值</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>高斯中心</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>高斯峰值</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>高斯直径</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>粗糙度</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>相关系数</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>测量数据</string>
+        </property>
+       </column>
+       <item row="0" column="0">
+        <property name="text">
+         <string>1.0000</string>
+        </property>
+       </item>
+       <item row="1" column="0">
+        <property name="text">
+         <string>2.9123</string>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string>2.3123</string>
+        </property>
+       </item>
+       <item row="3" column="0">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="4" column="0">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="5" column="0">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="imageDock">
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>300</height>
+    </size>
+   </property>
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::NoDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>分析图片</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="imageDockContents">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="imageLabel">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="M2Dock" name="dockWidget">
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents"/>
+  </widget>
+  <action name="actionOpen_O">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/statics/006HJgYYgy1fsd4oltwwsg3096096t9z.gif</normaloff>:/icons/statics/006HJgYYgy1fsd4oltwwsg3096096t9z.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Open(&amp;O)</string>
+   </property>
+   <property name="statusTip">
+    <string>打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+O</string>
+   </property>
+  </action>
+  <action name="actionVersion">
+   <property name="text">
+    <string>Version</string>
+   </property>
+   <property name="toolTip">
+    <string>Version</string>
+   </property>
+  </action>
+  <action name="actionMeasure_Result">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/statics/讲道理嘛.jpg</normaloff>:/icons/statics/讲道理嘛.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Measure Result</string>
+   </property>
+   <property name="toolTip">
+    <string>Measure Result</string>
+   </property>
+   <property name="statusTip">
+    <string>测量结果</string>
+   </property>
+  </action>
+  <action name="actionSetting">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/statics/讲道理嘛.jpg</normaloff>:/icons/statics/讲道理嘛.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Setting</string>
+   </property>
+   <property name="statusTip">
+    <string>设置</string>
+   </property>
+  </action>
+  <action name="action3D">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/statics/怎么讲嘛.jpg</normaloff>:/icons/statics/怎么讲嘛.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>3D</string>
+   </property>
+   <property name="statusTip">
+    <string>3D图</string>
+   </property>
+  </action>
+  <action name="actionM2">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/statics/怎么讲嘛.jpg</normaloff>:/icons/statics/怎么讲嘛.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>M2</string>
+   </property>
+   <property name="statusTip">
+    <string>M2因子</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>M2Dock</class>
+   <extends>QDockWidget</extends>
+   <header>analysis/m2dock.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

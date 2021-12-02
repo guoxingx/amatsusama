@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>statics/02d12f2eb9389b50d8be78608835e5dde7116ebb.jpg</file>
+        <file>statics/006HJgYYgy1fsd4oltwwsg3096096t9z.gif</file>
+        <file>statics/460e0cf3d7ca7bcbea8ad01db3096b63f624a80b.jpg</file>
+        <file>statics/讲道理嘛.jpg</file>
+        <file>statics/怎么讲嘛.jpg</file>
+        <file>statics/WechatIMG14.jpeg</file>
+        <file>statics/WechatIMG190.jpeg</file>
+    </qresource>
+    <qresource prefix="/samples">
+        <file>statics/光斑.png</file>
+    </qresource>
+</RCC>
