@@ -10,6 +10,10 @@
 
 #include "settingdlg.h"
 #include "versiondlg.h"
+
+#include "neoapi/neoapi.hpp"
+#include <iostream>
+
 //#include "analysis/m2dock.h"
 
 // constructor
@@ -48,7 +52,7 @@ void MainWindow::init_status_bar()
     statusLabel->setFrameShape(QFrame::WinPanel);
     statusLabel->setFrameShadow(QFrame::Sunken);
     ui->statusBar->addWidget(statusLabel);
-    statusLabel->setText(tr("时间时间在上世纪的夜晚"));
+    statusLabel->setText("");
 
     QLabel *permanent = new QLabel(this);
     permanent->setFrameStyle(QFrame::Box | QFrame::Sunken);
@@ -136,10 +140,31 @@ void MainWindow::on_actionOpen_O_triggered()
 void MainWindow::on_actionM2_triggered()
 {
     ui->dockWidget->show();
-//    M2Dock dock;
-//    if (dock.isHidden())
-//        dock.show();
-//    addDockWidget(Qt::RightDockWidgetArea, dock);
-//    else
-//        dock.hide();
+
+    //    M2Dock dock;
+    //    if (dock.isHidden())
+    //        dock.show();
+    //    addDockWidget(Qt::RightDockWidgetArea, dock);
+    //    else
+    //        dock.hide();
+
+    NeoAPI::Cam camera = NeoAPI::Cam();
+//    camera.Connect();
+//    if (camera.IsConnected()) {
+//        ui->connInfoLabel->setText("连接成功");
+//        qDebug("camera connected");
+
+//        camera.f().ExposureTime = 20000;
+//        std::cout << "exposure time: " << camera.f().ExposureTime << std::endl;
+
+//        camera.f().TriggerMode = NeoAPI::TriggerMode::On;
+//        camera.f().TriggerSoftware.Execute();
+//        NeoAPI::Image img = camera.GetImage();
+//        std::cout << "image width: " << img.GetWidth() << std::endl;
+
+//        img.Save("../testImage");
+
+//    } else {
+//        ui->connInfoLabel->setText("连接失败!");
+//    }
 }
