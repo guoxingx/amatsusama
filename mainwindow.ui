@@ -222,15 +222,9 @@
     </layout>
    </widget>
   </widget>
-  <widget class="M2Dock" name="dockWidget">
-   <attribute name="dockWidgetArea">
-    <number>8</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents"/>
-  </widget>
   <action name="actionOpen_O">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/statics/006HJgYYgy1fsd4oltwwsg3096096t9z.gif</normaloff>:/icons/statics/006HJgYYgy1fsd4oltwwsg3096096t9z.gif</iconset>
    </property>
    <property name="text">
@@ -253,7 +247,7 @@
   </action>
   <action name="actionMeasure_Result">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/statics/讲道理嘛.jpg</normaloff>:/icons/statics/讲道理嘛.jpg</iconset>
    </property>
    <property name="text">
@@ -268,7 +262,7 @@
   </action>
   <action name="actionSetting">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/statics/讲道理嘛.jpg</normaloff>:/icons/statics/讲道理嘛.jpg</iconset>
    </property>
    <property name="text">
@@ -280,7 +274,7 @@
   </action>
   <action name="action3D">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/statics/怎么讲嘛.jpg</normaloff>:/icons/statics/怎么讲嘛.jpg</iconset>
    </property>
    <property name="text">
@@ -292,7 +286,7 @@
   </action>
   <action name="actionM2">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/statics/怎么讲嘛.jpg</normaloff>:/icons/statics/怎么讲嘛.jpg</iconset>
    </property>
    <property name="text">
@@ -303,16 +297,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>M2Dock</class>
-   <extends>QDockWidget</extends>
-   <header>analysis/m2dock.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

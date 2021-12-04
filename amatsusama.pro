@@ -24,7 +24,6 @@ DEPENDPATH += $$PWD/views
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    analysis/m2dock.cpp \
     main.cpp \
     mainwindow.cpp \
     views\settingdlg.cpp \
