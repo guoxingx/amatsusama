@@ -10,17 +10,30 @@
     <height>530</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>光束质量检测 v0.0.1</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>600</height>
+    </size>
+   </property>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>768</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFiles_F">
@@ -69,9 +82,15 @@
    <addaction name="actionM2"/>
   </widget>
   <widget class="QDockWidget" name="measureDock">
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>115</height>
+    </size>
+   </property>
    <property name="maximumSize">
     <size>
-     <width>200</width>
+     <width>600</width>
      <height>524287</height>
     </size>
    </property>
@@ -88,13 +107,16 @@
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="1">
       <widget class="QTableWidget" name="tableWidget">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <row>
         <property name="text">
          <string>饱和数</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>13</pointsize>
+          <pointsize>9</pointsize>
          </font>
         </property>
        </row>
@@ -222,7 +244,7 @@
     </layout>
    </widget>
   </widget>
-  <widget class="M2Dock" name="dockWidget">
+  <widget class="M2Dock" name="m2dock">
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>

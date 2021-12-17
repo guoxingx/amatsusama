@@ -9,6 +9,9 @@ COPIES += myDocumentation
 myDocumentation.files = $$files($$PWD/frameworks/baumer/bin/*)
 myDocumentation.path += $$OUT_PWD
 
+INCLUDEPATH += $$PWD/views
+DEPENDPATH += $$PWD/views
+
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/frameworks/baumer/lib/ -lneoapi_cpp
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/frameworks/baumer/lib/ -lneoapi_cpp
 else:unix: LIBS += -L$$PWD/frameworks/baumer/lib/ -lneoapi_cpp
@@ -16,8 +19,9 @@ else:unix: LIBS += -L$$PWD/frameworks/baumer/lib/ -lneoapi_cpp
 INCLUDEPATH += $$PWD/frameworks/baumer/include
 DEPENDPATH += $$PWD/frameworks/baumer/include
 
-INCLUDEPATH += $$PWD/views
-DEPENDPATH += $$PWD/views
+INCLUDEPATH += $$PWD/frameworks/opencv/include
+DEPENDPATH += $$PWD/frameworks/opencv/include
+LIBS += -L$$PWD/frameworks/opencv/lib/ -lopencv_world454d
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -25,6 +29,7 @@ DEPENDPATH += $$PWD/views
 
 SOURCES += \
     analysis/m2dock.cpp \
+    analysis/measure.cpp \
     main.cpp \
     mainwindow.cpp \
     views\settingdlg.cpp \
@@ -32,6 +37,7 @@ SOURCES += \
 
 HEADERS += \
     analysis/m2dock.h \
+    analysis/measure.h \
     mainwindow.h \
     views\settingdlg.h \
     views\versiondlg.h

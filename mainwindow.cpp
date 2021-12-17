@@ -10,6 +10,7 @@
 
 #include "settingdlg.h"
 #include "versiondlg.h"
+#include "analysis/measure.h"
 
 #include "neoapi/neoapi.hpp"
 #include <iostream>
@@ -77,23 +78,26 @@ bool MainWindow::openImage()
         "please choose an image file",
         "",
         "Image Files(*.jpg *.png *.bmp *.pgm *.pbm);;All(*.*)");
-    if (OpenFile != "") {
-        if (image.load(OpenFile)) {
-            // 仅仅只是导入之后的图片仍然是原来的大小
-            // 这个时候我们需要缩放
-            ui->imageLabel->setPixmap(QPixmap::fromImage(image).scaled(ui->imageLabel->size()));
 
-            // make image(and label) scaled with dock
-            ui->imageLabel->setScaledContents(true);
+//    if (OpenFile != "") {
+//        if (image.load(OpenFile)) {
+//            // 仅仅只是导入之后的图片仍然是原来的大小
+//            // 这个时候我们需要缩放
+//            ui->imageLabel->setPixmap(QPixmap::fromImage(image).scaled(ui->imageLabel->size()));
 
-            // show image path in dock title
-            ui->imageDock->setWindowTitle(QFileInfo(OpenFile).filePath());
+//            // make image(and label) scaled with dock
+//            ui->imageLabel->setScaledContents(true);
 
-            // show imageDock if it's hidden
-            if (ui->imageDock->isHidden())
-                ui->imageDock->show();
-        }
-    }
+//            // show image path in dock title
+//            ui->imageDock->setWindowTitle(QFileInfo(OpenFile).filePath());
+
+//            // show imageDock if it's hidden
+//            if (ui->imageDock->isHidden())
+//                ui->imageDock->show();
+//        }
+//    }
+
+    process_image(OpenFile.toStdString());
     return true;
 }
 
@@ -139,7 +143,7 @@ void MainWindow::on_actionOpen_O_triggered()
 // show m2 analysis dock
 void MainWindow::on_actionM2_triggered()
 {
-    ui->dockWidget->show();
+    ui->m2dock->show();
 
     //    M2Dock dock;
     //    if (dock.isHidden())

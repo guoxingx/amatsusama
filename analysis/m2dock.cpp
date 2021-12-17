@@ -7,6 +7,8 @@ M2Dock::M2Dock(QWidget *parent) :
     ui(new Ui::M2Dock)
 {
     ui->setupUi(this);
+    qDebug("m2dock constructed");
+    ui->startButton->setText("???");
     this->hide();
 //    ui->dockWidgetContents
 }
